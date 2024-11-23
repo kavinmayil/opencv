@@ -1,0 +1,18 @@
+import cv2
+img = cv2.imread("C:\\Users\\KAVIN\\OneDrive\\Pictures\\cherry.jpg")
+print('original dimension',img.shape)
+scale_percentage=50
+width=int(img.shape[1]*scale_percentage/100)
+height=int(img.shape[0]*scale_percentage/100)
+dim=(width,height)
+#resized=cv2.resize(img,dim,interpolation=cv2.INTER_AREA)
+#resized=cv2.resize(img,dim,interpolation=cv2.INTER_NEAREST)
+resized=cv2.resize(img,dim,interpolation=cv2.INTER_CUBIC)
+#resized=cv2.resize(img,dim,interpolation=cv2.INTER_LINEAR)
+#resized=cv2.resize(img,dim,interpolation=cv2.INTER_LANCZOS4)
+print('resized dimension',resized.shape)
+cv2.imwrite('new.jpg',resized)
+cv2.imshow('original img',img)
+cv2.imshow('resized img',resized)
+cv2.waitKey()
+cv2.destroyAllWindows()
