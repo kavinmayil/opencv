@@ -1,0 +1,11 @@
+import cv2
+img = cv2.imread("C:\\Users\\KAVIN\\OneDrive\\Pictures\\cherry.jpg")
+cv2.imshow('original img',img)
+flipping=cv2.flip(img,1)
+cv2.imshow('horizontal flip',flipping)
+flipping=cv2.flip(img,0)
+cv2.imshow('vertical flip',flipping)
+flipping=cv2.flip(img,-1)
+cv2.imshow('horizontal&vertical flip',flipping)
+cv2.waitKey()
+cv2.destroyAllWindows()
